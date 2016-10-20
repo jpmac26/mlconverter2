@@ -86,7 +86,7 @@ namespace mlconverter2.soundfonts
 				tabControl1.SelectTab(SuperstarSamples);
 
 				checkBox1.Checked = (sample[0] == 0x40000000);
-				sample17.Value = ((decimal)sample[1]) / 1000000;
+				sample17.Value = (uint)(sample[1] / 0x400);
 				sample18.Value = (uint)sample[2];
 				sample19.Value = (uint)sample[3];
 			}
@@ -161,7 +161,7 @@ namespace mlconverter2.soundfonts
         private void exportSamplebtn_Click(object sender, EventArgs e)
         {
             SaveFileDialog file = new SaveFileDialog();
-            file.Filter = "Wave|*.wav";
+            file.Filter = "Wave | *.wav";
             if (file.ShowDialog() == DialogResult.OK)
             {
 				switch (rom.RomFormat)
@@ -184,7 +184,7 @@ namespace mlconverter2.soundfonts
             if (folder.ShowDialog() == DialogResult.OK)
             {
                 exportAllToSample(folder.SelectedPath);
-                MessageBox.Show("Samples succesfully exported");
+                MessageBox.Show("Samples succesfully exported.");
             }
         }
 

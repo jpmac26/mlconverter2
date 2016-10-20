@@ -70,6 +70,7 @@
 			this.samplelst = new System.Windows.Forms.ListBox();
 			this.exportSamplebtn = new System.Windows.Forms.Button();
 			this.SuperstarSamples = new System.Windows.Forms.TabPage();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.label31 = new System.Windows.Forms.Label();
 			this.sample19 = new System.Windows.Forms.NumericUpDown();
 			this.label32 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.samplelst2 = new System.Windows.Forms.ListBox();
 			this.button2 = new System.Windows.Forms.Button();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.instruments.SuspendLayout();
 			this.KazooieSamples.SuspendLayout();
@@ -109,9 +109,9 @@
 			// 
 			// tabControl1
 			// 
-			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.instruments);
 			this.tabControl1.Controls.Add(this.KazooieSamples);
 			this.tabControl1.Controls.Add(this.SuperstarSamples);
@@ -134,8 +134,8 @@
 			// 
 			// instrumentlst
 			// 
-			this.instrumentlst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)));
+			this.instrumentlst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.instrumentlst.FormattingEnabled = true;
 			this.instrumentlst.Location = new System.Drawing.Point(6, 6);
 			this.instrumentlst.Name = "instrumentlst";
@@ -204,18 +204,18 @@
 			this.sample16.Hexadecimal = true;
 			this.sample16.Location = new System.Drawing.Point(424, 217);
 			this.sample16.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample16.Name = "sample16";
 			this.sample16.Size = new System.Drawing.Size(73, 20);
 			this.sample16.TabIndex = 35;
 			this.sample16.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label16
 			// 
@@ -231,18 +231,18 @@
 			this.sample15.Hexadecimal = true;
 			this.sample15.Location = new System.Drawing.Point(424, 191);
 			this.sample15.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample15.Name = "sample15";
 			this.sample15.Size = new System.Drawing.Size(73, 20);
 			this.sample15.TabIndex = 33;
 			this.sample15.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label15
 			// 
@@ -258,18 +258,18 @@
 			this.sample14.Hexadecimal = true;
 			this.sample14.Location = new System.Drawing.Point(424, 165);
 			this.sample14.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample14.Name = "sample14";
 			this.sample14.Size = new System.Drawing.Size(73, 20);
 			this.sample14.TabIndex = 31;
 			this.sample14.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label14
 			// 
@@ -285,18 +285,18 @@
 			this.sample13.Hexadecimal = true;
 			this.sample13.Location = new System.Drawing.Point(424, 139);
 			this.sample13.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample13.Name = "sample13";
 			this.sample13.Size = new System.Drawing.Size(73, 20);
 			this.sample13.TabIndex = 29;
 			this.sample13.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label13
 			// 
@@ -312,18 +312,18 @@
 			this.sample12.Hexadecimal = true;
 			this.sample12.Location = new System.Drawing.Point(424, 113);
 			this.sample12.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample12.Name = "sample12";
 			this.sample12.Size = new System.Drawing.Size(73, 20);
 			this.sample12.TabIndex = 27;
 			this.sample12.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label12
 			// 
@@ -339,18 +339,18 @@
 			this.sample11.Hexadecimal = true;
 			this.sample11.Location = new System.Drawing.Point(424, 87);
 			this.sample11.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample11.Name = "sample11";
 			this.sample11.Size = new System.Drawing.Size(73, 20);
 			this.sample11.TabIndex = 25;
 			this.sample11.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label11
 			// 
@@ -366,18 +366,18 @@
 			this.sample10.Hexadecimal = true;
 			this.sample10.Location = new System.Drawing.Point(424, 61);
 			this.sample10.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample10.Name = "sample10";
 			this.sample10.Size = new System.Drawing.Size(73, 20);
 			this.sample10.TabIndex = 23;
 			this.sample10.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label10
 			// 
@@ -393,18 +393,18 @@
 			this.sample9.Hexadecimal = true;
 			this.sample9.Location = new System.Drawing.Point(424, 35);
 			this.sample9.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample9.Name = "sample9";
 			this.sample9.Size = new System.Drawing.Size(73, 20);
 			this.sample9.TabIndex = 21;
 			this.sample9.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label9
 			// 
@@ -420,18 +420,18 @@
 			this.sample8.Hexadecimal = true;
 			this.sample8.Location = new System.Drawing.Point(239, 243);
 			this.sample8.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample8.Name = "sample8";
 			this.sample8.Size = new System.Drawing.Size(73, 20);
 			this.sample8.TabIndex = 19;
 			this.sample8.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label8
 			// 
@@ -447,18 +447,18 @@
 			this.sample7.Hexadecimal = true;
 			this.sample7.Location = new System.Drawing.Point(239, 217);
 			this.sample7.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample7.Name = "sample7";
 			this.sample7.Size = new System.Drawing.Size(73, 20);
 			this.sample7.TabIndex = 17;
 			this.sample7.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label7
 			// 
@@ -474,18 +474,18 @@
 			this.sample6.Hexadecimal = true;
 			this.sample6.Location = new System.Drawing.Point(239, 191);
 			this.sample6.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample6.Name = "sample6";
 			this.sample6.Size = new System.Drawing.Size(73, 20);
 			this.sample6.TabIndex = 15;
 			this.sample6.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label6
 			// 
@@ -501,18 +501,18 @@
 			this.sample5.Hexadecimal = true;
 			this.sample5.Location = new System.Drawing.Point(239, 165);
 			this.sample5.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample5.Name = "sample5";
 			this.sample5.Size = new System.Drawing.Size(73, 20);
 			this.sample5.TabIndex = 13;
 			this.sample5.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label5
 			// 
@@ -528,18 +528,18 @@
 			this.sample4.Hexadecimal = true;
 			this.sample4.Location = new System.Drawing.Point(239, 139);
 			this.sample4.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample4.Name = "sample4";
 			this.sample4.Size = new System.Drawing.Size(73, 20);
 			this.sample4.TabIndex = 11;
 			this.sample4.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label4
 			// 
@@ -555,18 +555,18 @@
 			this.sample3.Hexadecimal = true;
 			this.sample3.Location = new System.Drawing.Point(239, 113);
 			this.sample3.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample3.Name = "sample3";
 			this.sample3.Size = new System.Drawing.Size(73, 20);
 			this.sample3.TabIndex = 9;
 			this.sample3.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label3
 			// 
@@ -582,18 +582,18 @@
 			this.sample2.Hexadecimal = true;
 			this.sample2.Location = new System.Drawing.Point(239, 87);
 			this.sample2.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample2.Name = "sample2";
 			this.sample2.Size = new System.Drawing.Size(73, 20);
 			this.sample2.TabIndex = 7;
 			this.sample2.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label2
 			// 
@@ -609,18 +609,18 @@
 			this.sample1.Hexadecimal = true;
 			this.sample1.Location = new System.Drawing.Point(239, 61);
 			this.sample1.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample1.Name = "sample1";
 			this.sample1.Size = new System.Drawing.Size(73, 20);
 			this.sample1.TabIndex = 5;
 			this.sample1.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label1
 			// 
@@ -636,18 +636,18 @@
 			this.sample0.Hexadecimal = true;
 			this.sample0.Location = new System.Drawing.Point(239, 35);
 			this.sample0.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample0.Name = "sample0";
 			this.sample0.Size = new System.Drawing.Size(73, 20);
 			this.sample0.TabIndex = 3;
 			this.sample0.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// exportSamplesbtn
 			// 
@@ -661,8 +661,8 @@
 			// 
 			// samplelst
 			// 
-			this.samplelst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)));
+			this.samplelst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.samplelst.FormattingEnabled = true;
 			this.samplelst.Location = new System.Drawing.Point(6, 6);
 			this.samplelst.Name = "samplelst";
@@ -701,6 +701,15 @@
 			this.SuperstarSamples.Text = "Mario & Luigi Sample Definitions";
 			this.SuperstarSamples.UseVisualStyleBackColor = true;
 			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(325, 38);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(15, 14);
+			this.checkBox1.TabIndex = 48;
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
 			// label31
 			// 
 			this.label31.AutoSize = true;
@@ -715,18 +724,18 @@
 			this.sample19.Hexadecimal = true;
 			this.sample19.Location = new System.Drawing.Point(325, 115);
 			this.sample19.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample19.Name = "sample19";
 			this.sample19.Size = new System.Drawing.Size(73, 20);
 			this.sample19.TabIndex = 46;
 			this.sample19.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label32
 			// 
@@ -742,37 +751,36 @@
 			this.sample18.Hexadecimal = true;
 			this.sample18.Location = new System.Drawing.Point(325, 89);
 			this.sample18.Maximum = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			this.sample18.Name = "sample18";
 			this.sample18.Size = new System.Drawing.Size(73, 20);
 			this.sample18.TabIndex = 44;
 			this.sample18.Value = new decimal(new int[] {
-			-1,
-			0,
-			0,
-			0});
+            -1,
+            0,
+            0,
+            0});
 			// 
 			// label33
 			// 
 			this.label33.AutoSize = true;
 			this.label33.Location = new System.Drawing.Point(133, 65);
 			this.label33.Name = "label33";
-			this.label33.Size = new System.Drawing.Size(91, 13);
+			this.label33.Size = new System.Drawing.Size(85, 13);
 			this.label33.TabIndex = 43;
-			this.label33.Text = "Sample rate (kHz)";
+			this.label33.Text = "Sample rate (Hz)";
 			// 
 			// sample17
 			// 
-			this.sample17.DecimalPlaces = 6;
 			this.sample17.Location = new System.Drawing.Point(325, 63);
 			this.sample17.Maximum = new decimal(new int[] {
-			320,
-			0,
-			0,
-			0});
+            320000,
+            0,
+            0,
+            0});
 			this.sample17.Name = "sample17";
 			this.sample17.Size = new System.Drawing.Size(92, 20);
 			this.sample17.TabIndex = 42;
@@ -798,8 +806,8 @@
 			// 
 			// samplelst2
 			// 
-			this.samplelst2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)));
+			this.samplelst2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.samplelst2.FormattingEnabled = true;
 			this.samplelst2.Location = new System.Drawing.Point(6, 6);
 			this.samplelst2.Name = "samplelst2";
@@ -817,15 +825,6 @@
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(325, 38);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(15, 14);
-			this.checkBox1.TabIndex = 48;
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
 			// SoundfontViewer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -834,7 +833,7 @@
 			this.Controls.Add(this.tabControl1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "SoundfontViewer";
-			this.Text = "SoundfontViewer";
+			this.Text = "Soundfont Viewer";
 			this.tabControl1.ResumeLayout(false);
 			this.instruments.ResumeLayout(false);
 			this.KazooieSamples.ResumeLayout(false);

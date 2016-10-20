@@ -55,9 +55,9 @@ namespace mlconverter2.soundfonts
 						int offset = file.ReadInt32();
 						if (offset == 0x40000000) break; // this means we have run into the start of instrument data, so we will stop
 
-						if (offset == 0) // Set nonexistent offsets to zero, so they are easier to notice
+						if (offset == 0) 
 						{
-							instrumentPointers[i] = 0;
+							instrumentPointers[i] = 0; // Set nonexistent offsets to zero, so they are easier to notice
 						}
 						else
 						{
@@ -148,8 +148,8 @@ namespace mlconverter2.soundfonts
 			file.Write(new byte[] { 0x52, 0x49, 0x46, 0x46 });
 			file.Write(sampleLength + 0x24);
 			file.Write(new byte[] { 0x57, 0x41, 0x56, 0x45, 0x66, 0x6D, 0x74, 0x20, 0x10, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00 });
-			file.Write(instrumentDef[activeSample][1] / 1000);
-			file.Write(instrumentDef[activeSample][1] / 1000); // (Samplerate) * (1 channel) * ((8 bits per sample) / 8)
+			file.Write(instrumentDef[activeSample][1] / 0x400);
+			file.Write(instrumentDef[activeSample][1] / 0x400); // (Samplerate) * (1 channel) * ((8 bits per sample) / 8)
 			file.Write(new byte[] { 0x01, 0x00, 0x08, 0x00, 0x64, 0x61, 0x74, 0x61 });
 			file.Write(sampleLength);
 
