@@ -41,11 +41,14 @@ namespace mlconverter2.soundfonts
 		        {
 			        if (soundfont.instrumentPointers[i] == 0) continue;
 					instrumentlst.Items.Add("instrument 0x" + i.ToString("X2"));
-					samplelst.Items.Add("sample 0x" + i.ToString("X2"));
-			        samplelst2.Items.Add("sample 0x" + i.ToString("X2"));
 		        }
 		        instrumentlst.SetSelected(0, true);
-	        }
+				for (int i = 0; i < soundfont.samplePointers.Length; i++)
+				{
+					samplelst.Items.Add("sample 0x" + i.ToString("X2"));
+					samplelst2.Items.Add("sample 0x" + i.ToString("X2"));
+				}
+			}
 	        else
 	        {
 				for (int i = 0; i < 0x32; i++)
@@ -125,9 +128,9 @@ namespace mlconverter2.soundfonts
 			switch (rom.RomFormat)
 			{
 				case 0x00:
-					for (int i = 0; i < soundfont.instrumentPointers.Length; i++)
+					for (int i = 0; i < soundfont.samplePointers.Length; i++)
 					{
-						if (soundfont.instrumentPointers[i] == 0) continue;
+						if (soundfont.samplePointers[i] == 0) continue;
 						soundfont.ActiveSample = i;
 						soundfont.SuperstarSampleToWave(new BinaryReader(new FileStream(rom.Path, FileMode.Open)), new BinaryWriter(File.OpenWrite(path + "\\sample" + i.ToString("D3") + ".wav")));
 					}

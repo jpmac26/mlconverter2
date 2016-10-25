@@ -79,6 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="soundfonts\InfoListChunk.cs" />
+    <Compile Include="soundfonts\SdtaListChunk.cs" />
+    <Compile Include="soundfonts\SF2Chunk.cs" />
+    <Compile Include="soundfonts\SF2File.cs" />
     <Compile Include="soundfonts\Soundfont.cs" />
     <Compile Include="soundfonts\SoundfontViewer.cs">
       <SubType>Form</SubType>

@@ -11,11 +11,11 @@ namespace mlconverter2.soundfonts
     {
         // ---- data arrays ----
 
-        public int[] instrumentPointers;
-        public int[] samplePointers;
+        public static int[] instrumentPointers;
+        public static int[] samplePointers;
 
-        int[][] instrumentDef;
-        int[][] sampleDef;
+        public static int[][] instrumentDef;
+        public static int[][] sampleDef;
 
         // ---- variables ----
 
@@ -31,7 +31,7 @@ namespace mlconverter2.soundfonts
 
 		public int[] SuperstarSample
 		{
-			get { return instrumentDef[activeSample]; }
+			get { return sampleDef[activeSample]; }
 		}
 
 		public int[] KazooieSample
@@ -46,40 +46,61 @@ namespace mlconverter2.soundfonts
 			switch (romFormat)
 			{
 				case 0x00: //Superstar Saga
-					int tableStart = 0x00A806B8;
-					file.BaseStream.Position = tableStart; // Start of instrument offset table
+					int iTableStart = 0x0021D1CC;
+					file.BaseStream.Position = iTableStart; // Start of instrument offset table
 
-					instrumentPointers = new int[0xEC];
+					ushort size = file.ReadUInt16();
+					instrumentPointers = new int[(size / 2)];
+					for (int i = 0; i < (size / 2); i++)
+					{
+						ushort offset = file.ReadUInt16();
+						instrumentPointers[i] = iTableStart + offset - 2;
+					}
+					
+					instrumentDef = new int[(size / 2)][];
+					for (int i = 0; i < (size / 2); i++)
+					{
+						file.BaseStream.Position = instrumentPointers[i];
+
+						instrumentDef[i] = new int[2];
+						instrumentDef[i][0] = file.ReadInt32();
+						instrumentDef[i][1] = file.ReadInt32();
+					}
+
+
+
+					int sTableStart = 0x00A806B8;
+					file.BaseStream.Position = sTableStart; // Start of sample offset table
+
+					samplePointers = new int[0xEC];
 					for (int i = 0; i < 0xEC; i++)
 					{
 						int offset = file.ReadInt32();
-						if (offset == 0x40000000) break; // this means we have run into the start of instrument data, so we will stop
+						if (offset == 0x40000000) break; // this means we have run into the start of sample data, so we will stop
 
-						if (offset == 0) 
+						if (offset == 0)
 						{
-							instrumentPointers[i] = 0; // Set nonexistent offsets to zero, so they are easier to notice
+							samplePointers[i] = 0; // Set nonexistent offsets to zero, so they are easier to notice
 						}
 						else
 						{
-							instrumentPointers[i] = tableStart + offset;
+							samplePointers[i] = sTableStart + offset;
 						}
 					}
-					
-					// Note: we don't need to store sample pointers, because they are always 0x10 bytes after their respective instrument headers, and we have pointers to those already
-					instrumentDef = new int[0xEC][];
+
 					sampleDef = new int[0xEC][];
 					for (int i = 0; i < 0xEC; i++)
 					{
-						if (instrumentPointers[i] != 0)
+						if (samplePointers[i] != 0)
 						{
-							instrumentDef[i] = new int[4]; // The instrument header contains 4 values
+							sampleDef[i] = new int[4]; // The sample header contains 4 values
 
-							//This is just in case there is empty space in-between instruments
-							file.BaseStream.Position = instrumentPointers[i];
+							//This is just in case there is empty space in-between sample
+							file.BaseStream.Position = samplePointers[i];
 
 							for (int j = 0; j < 4; j++)
 							{
-								instrumentDef[i][j] = file.ReadInt32();
+								sampleDef[i][j] = file.ReadInt32();
 							}
 						}
 					}
@@ -141,15 +162,15 @@ namespace mlconverter2.soundfonts
 
 		public void SuperstarSampleToWave(BinaryReader gba, BinaryWriter file)
 		{
-			int sampleLength = instrumentDef[activeSample][3];
-			gba.BaseStream.Position = instrumentPointers[activeSample] + 0x10;
+			int sampleLength = sampleDef[activeSample][3];
+			gba.BaseStream.Position = samplePointers[activeSample] + 0x10;
 			byte[] sample = gba.ReadBytes(sampleLength);
 
 			file.Write(new byte[] { 0x52, 0x49, 0x46, 0x46 });
 			file.Write(sampleLength + 0x24);
 			file.Write(new byte[] { 0x57, 0x41, 0x56, 0x45, 0x66, 0x6D, 0x74, 0x20, 0x10, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00 });
-			file.Write(instrumentDef[activeSample][1] / 0x400);
-			file.Write(instrumentDef[activeSample][1] / 0x400); // (Samplerate) * (1 channel) * ((8 bits per sample) / 8)
+			file.Write(sampleDef[activeSample][1] / 0x400);
+			file.Write(sampleDef[activeSample][1] / 0x400); // (Samplerate) * (1 channel) * ((8 bits per sample) / 8)
 			file.Write(new byte[] { 0x01, 0x00, 0x08, 0x00, 0x64, 0x61, 0x74, 0x61 });
 			file.Write(sampleLength);
 
