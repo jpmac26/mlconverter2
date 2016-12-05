@@ -7,37 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using mlconverter2.soundfonts;
 
 namespace mlconverter2
 {
     public partial class Main : Form
     {
-        public Main()
-        {
-            InitializeComponent();
-            enableControls(false);
-        }
-
         // ---- global variables ----
 
-        Music music = new Music();
-        Rom rom = new Rom();
+        Music music;
+        Rom rom;
         bool updateEvent = true;
         bool updateCmb = true;
 
         RomViewer romViewer;
-        soundfonts.SoundfontViewer soundfontViewer;
+        SoundfontViewer soundfontViewer;
+
+        public Main()
+        {
+            InitializeComponent();
+            enableControls(false);
+
+            music = new Music();
+            rom = new Rom();
+        }
         
         // ---- control functions ----
 
         // enable/disable dangerous controls
         private void enableControls(bool value)
         {
-            updateEventbtn.Enabled = value;
-            addEventbtn.Enabled = value;
-            removeEventbtn.Enabled = value;
+            updateEventBtn.Enabled = value;
+            addEventBtn.Enabled = value;
+            removeEventBtn.Enabled = value;
 
-            eventcmb.Enabled = value;
+            eventCmb.Enabled = value;
             valuenum.Enabled = value;
 
             parameter1num.Enabled = value;
@@ -108,11 +112,11 @@ namespace mlconverter2
             enableControls(true);
 
             // setup event options
-            eventcmb.Items.Clear();
+            eventCmb.Items.Clear();
             switch (music.Format)
             {
-                case 0x00: eventcmb.Items.AddRange(StaticDataControl.returnEventOptions(0)); break;
-                case 0x01: eventcmb.Items.AddRange(StaticDataControl.returnEventOptions(1)); break;
+                case 0x00: eventCmb.Items.AddRange(StaticDataControl.returnEventOptions(0)); break;
+                case 0x01: eventCmb.Items.AddRange(StaticDataControl.returnEventOptions(1)); break;
                 default: MessageBox.Show("No event options for this format!\nThe process is likely unstable now, please restart the program."); break;
             }
             
@@ -185,7 +189,7 @@ namespace mlconverter2
         private void setupEventControllers(int[] data)
         {
             updateCmb = false;
-            eventcmb.SelectedIndex = data[0];
+            eventCmb.SelectedIndex = data[0];
             valuenum.Value = data[1];
             valuenum.Enabled = Convert.ToBoolean(data[2]);
 
@@ -201,11 +205,11 @@ namespace mlconverter2
 
         private void updateLabelStatus()
         {
-            if (rom.Path == null) romLoadedlbl.Text = "No ROM loaded";
-            else romLoadedlbl.Text = "ROM loaded [" + Path.GetFileName(rom.Path) + "]";
+            if (rom.Path == null) romLoadedLabel.Text = "No ROM loaded";
+            else romLoadedLabel.Text = "ROM loaded [" + Path.GetFileName(rom.Path) + "]";
 
-            if (music.Name == null) seqLoadedlbl.Text = "No sequence loaded";
-            else seqLoadedlbl.Text = "Sequence loaded [" + music.Name + "]";
+            if (music.Name == null) seqLoadedLabel.Text = "No sequence loaded";
+            else seqLoadedLabel.Text = "Sequence loaded [" + music.Name + "]";
         }
 
         // prepare the program depending on formats
@@ -326,7 +330,7 @@ namespace mlconverter2
         {
             if (updateCmb)
             {
-                List<int> pre = new List<int> { StaticDataControl.returnStatusValues(eventcmb.SelectedIndex, music.Format, music.ActiveTrack), 0, 0 };
+                List<int> pre = new List<int> { StaticDataControl.returnStatusValues(eventCmb.SelectedIndex, music.Format, music.ActiveTrack), 0, 0 };
                 setupEventControllers(StaticDataControl.returnControlData(pre, music.Format));
             }
         }
@@ -335,7 +339,7 @@ namespace mlconverter2
         {
             if (music.ActiveEvent != -1)
             {
-                int[] controlData = StaticDataControl.returnControlData(new List<int> { StaticDataControl.returnStatusValues(eventcmb.SelectedIndex, music.Format, music.ActiveTrack), 0, 0 }, music.Format);
+                int[] controlData = StaticDataControl.returnControlData(new List<int> { StaticDataControl.returnStatusValues(eventCmb.SelectedIndex, music.Format, music.ActiveTrack), 0, 0 }, music.Format);
                 List<int> pre = new List<int>();
 
                 pre.Add((int)valuenum.Value);
@@ -447,7 +451,7 @@ namespace mlconverter2
             }
         }
 
-        private void mIDIToolStripMenuItem_Click(object sender, EventArgs e)
+        private void midiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog file = new SaveFileDialog();
             file.Filter = "MIDI sequence | *.mid";
@@ -458,7 +462,7 @@ namespace mlconverter2
             }
         }
 
-        private void mIDIToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void midiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "MIDI sequence | *.mid";

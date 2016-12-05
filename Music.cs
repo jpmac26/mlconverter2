@@ -107,15 +107,16 @@ namespace mlconverter2
 
         #region open functions
 
-        public void openFile(BinaryReader file)
+        public void openFile(BinaryReader file, byte _format = 0xff)
         {
-            if (format == 0xff) throw new ArgumentException("A format is not specified.", "format");
+            if (_format != 0xff) format = _format;
 
-            switch (this.format)
+            if (format == 0xff) throw new ArgumentException("A format was not automatically determined from the provided file, and one was not manually specified.", "_format");
+
+            switch (format)
             {
                 case 0x00: openMls(file); break;
                 case 0x01: openBkg(file); break;
-                default: break;
             }
 
             file.Close();
